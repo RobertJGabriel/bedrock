@@ -93,5 +93,8 @@
   {% if switch('tracking-pixel') %}
     {% javascript 'firefox_new_pixel' %}
   {% endif %}
+  {% if request.GET.get('f', None) == '106' and request.locale in ['pt-BR', 'es-ES', 'fr', 'de', 'ru'] %}
+    {% javascript 'experiment_firefox_new_fc_win64_scene2' %}
+  {% endif %}
   {% javascript 'firefox_new_scene2' %}
 {% endblock %}
